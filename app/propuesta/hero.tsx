@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const problems = [
-  "Tienes un buen producto… pero no se vende",
+  "Tenemos un buen producto… pero no se vende",
   "Publicas en redes… pero nadie compra",
   "No logras entrar a tiendas o minimarkets",
   "No tienes una estrategia clara para crecer",
@@ -12,13 +12,13 @@ const problems = [
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen flex flex-col py-40 justify-center px-4 md:px-6 lg:px-10 overflow-hidden text-white relative">
+    <section className="min-h-screen flex flex-col justify-center px-4 md:px-6 lg:px-10 overflow-hidden text-white relative">
       
       {/* 🌅 Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#F28C52] via-[#E76F51] to-[#b88b03]" />
 
       {/* 🔥 HERO */}
-      <div className="relative w-full max-w-[1400px] mx-auto grid pt-40 lg:grid-cols-2 gap-12 items-center">
+      <div className="relative w-full max-w-[1400px] mx-auto grid md:pt-40 pt-18 lg:grid-cols-2 gap-12 items-center will-change-transform">
         
         {/* 🧠 TEXT */}
         <div className="flex flex-col gap-6 text-center lg:text-left">
@@ -46,7 +46,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-base sm:text-lg md:text-xl lg:text-2xl pt-10 text-white/90 max-w-2xl mx-auto lg:mx-0"
+            className="text-lg md:text-2xl pt-10 text-white/90 max-w-2xl mx-auto lg:mx-0"
           >
             Me encargo del crecimiento integral de la marca, gestionando de
             manera estratégica las áreas de marketing, ventas, distribución y
@@ -84,12 +84,13 @@ export default function HeroSection() {
           <motion.div
             animate={{ y: [0, -15, 0] }}
             transition={{ duration: 5, repeat: Infinity }}
-            className="relative w-[300px] md:w-full h-[350px] md:h-full bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl overflow-hidden flex items-center justify-center"
+            className="relative w-[400px] md:w-full h-[350px] md:h-full bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl overflow-hidden flex items-center justify-center"
           >
             <Image
               src="/img/logo.png"
               alt="Producto"
               fill
+              sizes="(max-width: 768px) 300px, (max-width: 1200px) 600px, 800px"
               className="object-cover"
               priority
             />
@@ -98,9 +99,9 @@ export default function HeroSection() {
       </div>
 
       {/* 💔 PROBLEMS SECTION */}
-      <div className="relative w-full max-w-[1400px] mx-auto mt-80">
+      <div className="relative w-full max-w-[1400px] mx-auto md:mt-80 mt-20 will-change-transform">
         
-        <div className="max-w-8xl mx-auto text-center flex flex-col gap-12">
+        <div className="max-w-8xl mx-auto text-center flex flex-col md:gap-12 gap-2">
           
           {/* Title */}
           <motion.h2
@@ -126,10 +127,10 @@ export default function HeroSection() {
                 viewport={{ once: true }}
                 className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl gap-5 flex  p-6 px-8 text-left hover:border-red-400/40 transition-all duration-300"
               >
-                <p className="text-white/90 text-2xl">
+                <p className="text-white/90 md:text-2xl text-lg">
                   ❌ 
                 </p>
-                <p className="text-2xl">{text}</p>
+                <p className="md:text-2xl text-lg">{text}</p>
               </motion.div>
             ))}
           </div>
@@ -142,8 +143,8 @@ export default function HeroSection() {
             viewport={{ once: true }}
             className="my-10 mb-40"
           >
-            <p className="text-xl md:text-5xl">
-              No es tu producto…es la falta de un sistema para venderlo.
+            <p className="text-2xl md:text-5xl">
+              No es Frutempo…es la falta de un sistema para venderlo.
             </p>
           </motion.div>
 
@@ -154,7 +155,7 @@ export default function HeroSection() {
           viewBox="0 0 1440 120"
           className="w-full h-[90px] md:h-[110px] lg:h-[120px]"
           preserveAspectRatio="none"
-          fill="#bee0b1"   // ← Color del siguiente fondo (cámbialo si tu siguiente sección es diferente)
+          fill="#e0d36d"   // ← Color del siguiente fondo (cámbialo si tu siguiente sección es diferente)
         >
           <polygon points="0,120 0,65 360,92 720,48 1080,88 1440,60 1440,120" />
         </svg>

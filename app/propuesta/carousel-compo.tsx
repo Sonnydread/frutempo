@@ -7,19 +7,42 @@ import { CheckCircle } from "lucide-react";
 import { growthPlan } from "../data/growthPlan";
 import { roadmap } from "../data/roadmap";
 
-
 const services = [
   {
-    title: "Primer Mes",
-    items: ["Redes sociales", "Contenido (reels/posts)"],
+    title: "Abril - Lanzamiento",
+    items: [
+      "Gestión completa en Redes sociales",
+      "Generar visibilidad y reconocimiento",
+      "Creación de Contenido (posts/lifestyle/branding/beneficios)",
+      "Desarrollo de Landing Page",
+      "Construir una base para escalar",
+      "Respuesta a comentarios y mensajes",
+      "Ventas a círculos cercanos",
+    ],
   },
   {
-    title: "Segundo Mes",
-    items: ["WhatsApp", "Cierre de clientes"],
+    title: "Mayo - Atracción",
+    items: [
+      "Convertir interesados en clientes",
+      "Gestión de pedidos via WhatsApp",
+      "Aplicación de estrategias (combos)",
+      "Presentación a minimarkets, tiendas saludables, gimnasios, cafeterías",
+      "Generar un flujo de caja rápido",
+      "Fidelización de clientes",
+      "Conseguir 30-50 ventas iniciales",
+    ],
   },
   {
-    title: "Tercer Mes",
-    items: ["Minimarkets", "Tiendas"],
+    title: "Junio - Expansión",
+    items: [
+      "Expansión Comercial",
+      "Asegurar eficiencia en la entrega",
+      "Activaciones, ferias y eventos",
+      "Identidad Digital de marca",
+      "Incrementar puntos de venta físicos",
+      "Fidelizar 100-300 seguidores reales",
+      "De 3 a 5 puntos de venta físicos",
+    ],
   },
 ];
 
@@ -73,31 +96,30 @@ export default function Carousel() {
   };
 
   return (
-    <section className="w-full min-h-screen flex items-center justify-center py-30 bg-[#eea735d7] relative overflow-hidden">
-    
-
+    <section className="w-full min-h-screen flex items-center justify-center md:py-30   bg-linear-to-b from-[#F28C52] to-[#eea735d7] relative overflow-hidden">
       <div className="max-w-[1800px] mx-auto px-6 relative w-full">
         {/* 🧠 Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-7xl font-medium text-white tracking-tight">
+        <div className="text-center md:mb-20">
+          <h2 className="text-4xl md:text-7xl font-medium text-white tracking-tight">
             Plan de Trabajo - 3 Meses
           </h2>
-         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-6"
-        >
-          <p className="text-xl md:text-3xl tracking-widest text-white">
-            No es solo marketing…es todo el sistema funcionando para vender.
-          </p>
-        </motion.div>
+          <h2 className="md:text-2xl text-base font-medium text-white tracking-wider">
+            ( Cada cierre de semana presentaré informe de seguimiento )
+          </h2>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mt-6"
+          >
+            <p className="text-xl md:text-3xl tracking-widest text-white">
+              No es solo marketing…es todo el sistema funcionando para vender
+            </p>
+          </motion.div>
         </div>
-
-        {/* 🎯 DRAG CONTAINER */}
         <motion.div
-          className="relative w-full h-[900px] flex items-center justify-center perspective-[2000px]"
+          className="relative w-full h-[800px] flex items-center justify-center perspective-[1500px]"
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           onDragStart={() => setIsDragging(true)}
@@ -135,14 +157,14 @@ export default function Carousel() {
                     duration: 1,
                     ease: [0.22, 1, 0.36, 1],
                   }}
-                  className="absolute w-[600px] md:w-[560px] h-[740px] rounded-3xl overflow-hidden border border-white/10 bg-white cursor-grab active:cursor-grabbing"
+                  className="absolute w-[360px] md:w-[560px] md:h-[740px] h-[600px] rounded-3xl overflow-hidden border border-white/10 bg-white cursor-grab active:cursor-grabbing"
                   style={{
                     transformStyle: "preserve-3d",
                     filter: "drop-shadow(0 40px 60px rgba(0,0,0,0.6))",
                   }}
                 >
                   {/* 🖼 IMAGE */}
-                  <div className="relative w-full h-[46%]">
+                  <div className="relative w-full md:h-[46%] h-[40%]">
                     <Image
                       src={
                         project.id <= 4
@@ -159,23 +181,23 @@ export default function Carousel() {
                   </div>
 
                   {/* 📊 CONTENT */}
-                  <div className="p-6 flex flex-col gap-4 h-[65%] overflow-hidden">
+                  <div className="p-6 flex flex-col gap-4 md:ml-8 h-[65%] overflow-hidden">
                     {/* 🏷 LABEL */}
                     <div className="flex items-center justify-between">
-                      <span className="text-xs px-3 py-1 rounded-full bg-[#F28C52]/10 text-[#F28C52] font-medium">
+                      <span className="text-lg px-6 py-2 rounded-full border-orange-600 border bg-[#F28C52]/10 text-[#F28C52] font-medium">
                         {project.label}
                       </span>
                     </div>
 
                     {/* ✅ BULLETS */}
-                    <div className="flex flex-col gap-2 overflow-y-auto pr-2">
+                    <div className="flex flex-col gap-2 md:mt-6 overflow-y-auto pr-2">
                       {project.tasks.map((task, idx) => (
                         <div key={idx} className="flex items-start gap-2">
                           <CheckCircle
                             size={16}
                             className="text-[#F4C542] mt-1 shrink-0"
                           />
-                          <p className="text-sm text-gray-700 leading-snug">
+                          <p className="md:text-lg text-sm text-gray-700 leading-snug">
                             {task}
                           </p>
                         </div>
@@ -189,7 +211,7 @@ export default function Carousel() {
         </motion.div>
 
         {/* 🔘 DOTS */}
-        <div className="flex justify-center gap-3 mt-16">
+        <div className="flex justify-center gap-3 md:mt-16">
           {projects.map((_, index) => (
             <button
               key={index}
@@ -206,10 +228,11 @@ export default function Carousel() {
           ))}
         </div>
 
- 
-<div className="mt-20 flex flex-col w-full items-center justify-center">
-  <p className="text-8xl">Objetivos de cada mes</p>
- <div className="grid md:grid-cols-3 w-full max-w-[1400px] pt-10 mx-auto gap-6">
+        <div className="mt-26 flex flex-col w-full items-center justify-center">
+          <p className="md:text-6xl text-4xl font-normal text-orange-800">
+            Objetivos de cada mes
+          </p>
+          <div className="grid md:grid-cols-3 w-full max-w-[1400px] pt-10 mx-auto gap-6">
             {services.map((service, index) => (
               <motion.div
                 key={index}
@@ -220,16 +243,16 @@ export default function Carousel() {
                 className="group bg-white/20 border border-white/80 backdrop-blur-xl rounded-2xl p-6 hover:border-gray-700 hover:bg-white/10 transition-all duration-300"
               >
                 {/* 🔥 Title */}
-                <h3 className="text-3xl font-normal mb-4 group-hover:text-orange-700 transition">
+                <h3 className="md:text-3xl text-2xl font-normal mb-4 group-hover:text-orange-700 transition">
                   {service.title}
                 </h3>
-  
+
                 {/* 📋 Items */}
-                <ul className="flex flex-col gap-2">
+                <ul className="flex flex-col md:pt-6 gap-2">
                   {service.items.map((item, i) => (
                     <li
                       key={i}
-                      className="text-white/80 text-2xl flex items-center gap-2"
+                      className="text-black md:text-2xl text-base flex items-center gap-2"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-orange-700" />
                       {item}
@@ -239,8 +262,7 @@ export default function Carousel() {
               </motion.div>
             ))}
           </div>
-</div>
-
+        </div>
       </div>
     </section>
   );

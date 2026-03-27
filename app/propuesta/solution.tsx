@@ -9,13 +9,13 @@ const features = [
     id: 1,
     title: "Marketing & Marca",
     desc: "Redes sociales, contenido, identidad y copy orientado a conversión.",
-    extra: "Reels, posts, historias, copywriting y gestión de comunidad.",
+    extra: "Reels, posts, historias, comentarios y gestión de comunidad.",
     img: "/img/logo.png",
   },
   {
     id: 2,
     title: "Ventas Directas",
-    desc: "WhatsApp, gestión de pedidos, seguimiento y cierre de clientes.",
+    desc: "WhatsApp, gestión de pedidos, seguimiento y cierre con clientes.",
     extra: "Upselling, seguimiento y conversión diaria.",
     img: "/img/shak.png",
   },
@@ -23,7 +23,7 @@ const features = [
     id: 3,
     title: "Expansión Comercial",
     desc: "Ingreso a minimarkets, negociación y crecimiento de puntos de venta.",
-    extra: "Prospección, acuerdos comerciales y rotación.",
+    extra: "Prospección, acuerdos comerciales y Alianzas.",
     img: "/img/sudam.png",
   },
   {
@@ -77,16 +77,16 @@ export default function Solution() {
         className="absolute inset-0 bg-[#F28C52]"
       />
 
-      <div className="relative max-w-7xl mx-auto flex flex-col items-center text-center gap-22">
+      <div className="relative max-w-7xl mx-auto flex flex-col items-center text-center gap-6">
         
         {/* HEADLINE */}
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl md:text-5xl font-medium leading-tight"
+          className="text-3xl md:text-5xl max-w-[1000px] font-medium leading-tight"
         >
-          No se necesita contratar 5 personas, yo me encargo de que el sistema haga crecer la marca 🚀
+          No se necesita contratar 5 personas, yo me encargo de que el sistema haga crecer Frutempo 🚀
         </motion.h2>
 
         {/* SUBHEADLINE */}
@@ -94,10 +94,10 @@ export default function Solution() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-lg md:text-2xl font-normal text-white/90 max-w-7xl"
+          className="text-lg md:text-2xl font-normal text-white max-w-7xl"
         >
           No es solo publicar o vender…  
-          se trata de construir un sistema que haga que tu producto se mueva todos los días.
+          se trata de construir un sistema que haga que Frutempo se venda todos los días.
         </motion.p>
 
         {/* GRID */}
@@ -147,11 +147,11 @@ export default function Solution() {
                     }`}
                     animate={{ y: isActive ? -10 : 0 }}
                   >
-                    <h3 className="text-lg md:text-xl font-semibold mb-1">
+                    <h3 className="text-lg md:text-2xl font-medium mb-1">
                       {item.title}
                     </h3>
 
-                    <p className="text-sm text-white/90">
+                    <p className="text-lg text-white">
                       {item.desc}
                     </p>
 
@@ -161,7 +161,7 @@ export default function Solution() {
                         opacity: isActive ? 1 : 0,
                         height: isActive ? "auto" : 0,
                       }}
-                      className="text-sm text-white/80 mt-2 overflow-hidden"
+                      className="text-lg text-white mt-2 overflow-hidden"
                     >
                       {item.extra}
                     </motion.p>
@@ -174,18 +174,6 @@ export default function Solution() {
             );
           })}
         </div>
-      </div>
-
-      {/* WAVE */}
-      <div className="absolute -top-10 left-0 w-full overflow-hidden leading-none z-30">
-        <svg
-          viewBox="0 0 1440 120"
-          className="w-full h-[110px] md:h-[130px] lg:h-[150px] rotate-180"
-          preserveAspectRatio="none"
-          fill="#bee0b1"
-        >
-          <polygon points="0,120 0,65 360,92 720,48 1080,88 1440,60 1440,120" />
-        </svg>
       </div>
     </section>
   );

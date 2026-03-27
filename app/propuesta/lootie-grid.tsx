@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import { ChevronRight } from "lucide-react";
 import Lottie from "lottie-react";
-import { Megaphone, Brush, Palette, BarChart, Globe } from "lucide-react";
+import { Megaphone, Boxes, Truck, CalendarFold, BarChart, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import setting from "@/lottie/setting.json";
@@ -11,6 +11,9 @@ import goal from "@/lottie/Goal.json";
 import megaphoneAnim from "@/lottie/Megaphone.json";
 import reload from "@/lottie/Reload.json";
 import target from "@/lottie/Target.json";
+import logistic from "@/lottie/logistic.json";
+import market from "@/lottie/market.json";
+import web from "@/lottie/web.json";
 
 type LottieColor = [number, number, number];
 
@@ -38,7 +41,7 @@ function recolorLottie(data: unknown, color: LottieColor) {
   return clone;
 }
 
-const BLUE: LottieColor = [0.23, 0.51, 0.96];
+const ORANGE: LottieColor = [0.95, 0.55, 0.25];
 
 const cards = [
   {
@@ -60,32 +63,32 @@ const cards = [
       "Convertir interesados en clientes",
       "Atención por WhatsApp",
       "Gestión de pedidos",
-      "Servicio de entrega/delivery"
+      "Servicio de entrega / delivery"
     ],
     roles: ["Ejecutivo de Ventas"],
-    icon: Brush,
-    animation: goal,
+    icon: Truck,
+    animation: logistic,
   },
   {
     title: "Operaciones",
     description: "Colocar el producto en tiendas y/o establecimientos",
-    items: ["Posicionar el producto en minimarkets", "Negociar consignaciones", "Conseguir Alianzas y puntos de venta"],
+    items: ["Posicionar Frutempo en minimarkets", "Negociar consignaciones", "Conseguir Alianzas y puntos de venta"],
     roles: ["Business Development"],
-    icon: Palette,
+    icon: Boxes,
     animation: setting,
   },
   {
     title: "Activaciones y Eventos",
     description: "Encargado de presencia en eventos",
     items: [
-      "Posicionar el producto en ferias",
+      "Posicionar Frutempo en ferias",
       "Activaciones de marca",
       "Degustaciones en eventos estratégicos",
       "Expansión comercial",
     ],
     roles: ["Brand Promoter", "Activador de Marca"],
-    icon: BarChart,
-    animation: reload,
+    icon: CalendarFold,
+    animation: market,
   },
   {
     title: "Desarrollo Web",
@@ -93,7 +96,7 @@ const cards = [
     items: ["Creación de Landing Page", "Optimización de Presencia Digital", "Actualizaciones" ],
     roles: ["Web Developer"],
     icon: Globe,
-    animation: target,
+    animation: web,
   },
 ];
 export default function LottieCardFlow() {
@@ -103,13 +106,13 @@ export default function LottieCardFlow() {
   const preColoredCards = useMemo(() => {
     return cards.map((card) => ({
       ...card,
-      blueAnim: recolorLottie(card.animation, BLUE),
+      blueAnim: recolorLottie(card.animation, ORANGE),
     }));
   }, []);
 
   return (
     <>
-      <section className="w-full h-full pb-40 flex flex-col items-center justify-center bg-[#bee0b1] px-6">
+      <section className="w-full h-full pb-40 flex-col md:flex hidden items-center justify-center bg-[#e0d36d] px-6">
         <div className="relative w-full max-w-[1400px]">
      
   <motion.h1
@@ -126,10 +129,10 @@ export default function LottieCardFlow() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-base text-xl md:text-2xl mb-20 text-black mx-auto"
           >
-           “Mi enfoque no es solo ejecutar tareas, sino encargarme del crecimiento integral de la marca, desde la generación de contenido hasta la venta y expansión de la marca. Gestionando de manera estratégica las áreas de marketing, ventas, distribución y presencia digital, con el fin de generar tracción comercial, posicionamiento y escalabilidad desde el primer mes.”
+           “Mi enfoque no es solo ejecutar tareas, sino encargarme del crecimiento integral de Frutempo, desde la generación de contenido hasta la venta y expansión de la marca. Gestionando de manera estratégica las áreas de marketing, ventas, distribución y presencia digital, con el fin de generar tracción comercial, posicionamiento y escalabilidad desde el primer mes.”
           </motion.p>
 
-          <div className="flex gap-4 h-[800px] relative z-10">
+          <div className="flex gap-4 h-[740px] relative z-10">
             {preColoredCards.map((card, i) => {
               const isActive = activeIndex === i;
               const Icon = card.icon;
@@ -153,7 +156,7 @@ export default function LottieCardFlow() {
                   }}
                 >
           
-                  <div className="flex justify-center items-start h-[60%]">
+                  <div className="flex justify-center items-start h-[56%]">
                     <div className="w-[180px] h-[180px] md:w-[240px] md:h-[240px] flex items-center justify-center">
                       <AnimatePresence mode="wait">
                         {isActive && (
@@ -177,15 +180,13 @@ export default function LottieCardFlow() {
                     </div>
                   </div>
 
-                  {/* 🧠 TEXTO */}
-                  {/* 🧠 TEXTO */}
                   <div className="flex flex-col items-center text-center gap-12">
-                    {!isActive && <Icon size={34} className="text-gray-400" />}
+                    {!isActive && <Icon size={34} className="text-orange-600" />}
 
                     <motion.h3
                       layout
                       animate={{
-                        fontSize: isActive ? "1.5rem" : "1.1rem",
+                        fontSize: isActive ? "2.5rem" : "1.1rem",
                         color: isActive ? "#F28C52" : "#111827",
                       }}
                       transition={{ duration: 0.4 }}
@@ -243,7 +244,7 @@ export default function LottieCardFlow() {
                           {card.roles.map((role, idx) => (
                             <span
                               key={idx}
-                              className="text-xl px-2 py-1 rounded-full bg-[#F28C52]/10 text-[#E76F51] border border-[#E76F51]/30"
+                              className="text-xl px-6 py-3 rounded-full bg-[#F28C52]/10 text-[#E76F51] border border-[#E76F51]/30"
                             >
                               {role}
                             </span>

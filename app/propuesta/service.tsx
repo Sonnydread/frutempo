@@ -86,22 +86,6 @@ export default function Services() {
             </motion.div>
           ))}
         </div>
-
-        {/* 🚀 Bottom statement */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-6"
-        >
-          <p className="text-xl md:text-2xl font-semibold">
-            No es solo marketing…  
-            <span className="text-[#F4C542] block mt-2">
-              es todo el sistema funcionando para vender.
-            </span>
-          </p>
-        </motion.div>
       </div>
     </section>
   );
