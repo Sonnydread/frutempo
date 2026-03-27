@@ -1,8 +1,6 @@
 
 import HeroSection from "./propuesta/hero";
-// import Problem from "./propuesta/problem";
 import Solution from "./propuesta/solution";
-import Services from "./propuesta/service";
 import Pricing from "./propuesta/pricing";
 import LottieCardFlow from "./propuesta/lootie-grid";
 import Carousel from "./propuesta/carousel-compo";
@@ -15,10 +13,8 @@ export default function Page() {
     <HeroSection />
     <LottieCardFlow />
     <MobileCarousel />
-    {/* <Problem /> */}
     <Solution />
     <Carousel />
-    {/* <Services /> */}
     <Metrics />
     <Pricing />
     </>
