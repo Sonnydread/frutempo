@@ -36,10 +36,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Guille.A/Frutempo",
-  description: "Esta propuesta tiene como objetivo transformar Frutempo en una marca sólida, visible y en constante crecimiento, mediante la implementación de un sistema integral que abarca marketing, ventas, distribución y presencia digital.",
+  title: "Frutempo | Perú",
+  description: "Frutempo - frutas deshidratadas 100% naturales, sin preservantes. Conservamos el verdadero sabor de la fruta en un snack saludable y práctico para cualquier momento.",
    icons: {
-    icon: "/img/wolf.jpg",
+    icon: "/img/log.jpg",
   },
 };
 
@@ -57,3 +57,4 @@ export default function RootLayout({
     </html>
   );
 }
+
