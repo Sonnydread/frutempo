@@ -39,7 +39,7 @@ export default function Presentation() {
   const prev = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section id="productos" className="relative overflow-hidden bg-[#010101] px-6 py-24 text-white sm:px-10 lg:px-16 lg:py-32">
+    <section id="productos" className="relative overflow-hidden bg-[#010101] px-6 md:py-24 py-12 text-white sm:px-10 lg:px-16 lg:py-32">
       <div className="pointer-events-none absolute left-[-10%] top-[20%] h-[500px] w-[500px] rounded-full bg-[#c9e63b]/5 blur-[140px]" />
       <div className="pointer-events-none absolute bottom-[-15%] right-[-5%] h-[450px] w-[450px] rounded-full bg-[#c9e63b]/4 blur-[140px]" />
 
@@ -61,7 +61,7 @@ export default function Presentation() {
               <div className="relative flex min-h-[580px] items-center justify-center overflow-hidden rounded-[1.5rem] bg-black sm:min-h-[680px] lg:min-h-[720px]">
                 <AnimatePresence mode="wait">
                   <motion.div key={slide.image} initial={{ opacity: 0, scale: 1.04 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.98 }} transition={{ duration: 0.55, ease: "easeOut" }} className="absolute inset-0 flex items-center justify-center">
-                    <Image src={slide.image} alt={slide.title} fill priority={current === 0} className="object-contain" sizes="(max-width: 1024px) 100vw, 65vw" />
+                    <Image src={slide.image} draggable={false} alt={slide.title} fill priority={current === 0} className="object-contain" sizes="(max-width: 1024px) 100vw, 65vw" />
                   </motion.div>
                 </AnimatePresence>
 

@@ -22,7 +22,8 @@ export default function FooterFrutempo() {
               <span className="mt-2 block text-[#c9e63b]">En su mejor versión.</span>
             </p>
 
-            <p className="mt-4 max-w-sm text-sm leading-6 text-white/45">Frutas seleccionadas y deshidratadas con cuidado para conservar su esencia natural.</p>
+            <p className="mt-4 md:block max-w-sm text-lg leading-6 text-white/45">Frutas seleccionadas y deshidratadas con cuidado para conservar su esencia natural.</p>
+             
           </motion.div>
 
           {/* ===== DERECHA: CTA + Instagram ===== */}

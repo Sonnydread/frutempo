@@ -8,7 +8,7 @@ const images = [
   "/img/time1.jpg",
   "/img/time2.jpg",
   "/img/time3.jpg",
-  "/img/time4.jpg",
+  "/img/time5.png",
 ];
 
 export default function Moments() {
@@ -42,7 +42,7 @@ export default function Moments() {
             <div className="relative flex h-full min-h-[484px] items-center justify-center overflow-hidden rounded-[1.5rem] bg-black sm:min-h-[634px] lg:min-h-[684px]">
               <AnimatePresence mode="wait">
                 <motion.div key={images[active]} initial={{ opacity: 0, scale: 1.025 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.985 }} transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }} className="absolute inset-0 flex items-center justify-center">
-                  <Image src={images[active]} alt={`Frutempo ${active + 1}`} fill priority className="object-contain" sizes="(max-width: 1024px) 100vw, calc(100vw - 300px)" />
+                  <Image src={images[active]} draggable={false} alt={`Frutempo ${active + 1}`} fill priority className="object-contain" sizes="(max-width: 1024px) 100vw, calc(100vw - 300px)" />
                 </motion.div>
               </AnimatePresence>
 
